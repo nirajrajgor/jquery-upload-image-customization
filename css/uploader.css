@@ -1,3 +1,7 @@
+/* Page Styles */
+body { padding-top: 70px; }
+
+/* end Page Style */
 #remove-profile-btn{ 
 	display: none;
 	margin-top: 12px;
