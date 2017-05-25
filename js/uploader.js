@@ -51,9 +51,11 @@ function checkProfileSize(arg){
 	                $('#remove-profile-btn').show();
             	}
             	else{
+                    imgWidth = arg.width || "any";
+                    imgHeight = arg.height || "any";
             		$('#upload-profile-error')
-            			.html('Uploaded Profile picture Dimension should be '+
-            			imgWidth+' * '+imgHeight);
+            			.html('Uploaded Picture Width should be '+
+            			imgWidth+' and Height should be '+imgHeight);
 	                var fileName = $('input#my-profile-file-selector[type=file]').val();
 	                console.log(fileName);
             	}
