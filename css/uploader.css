@@ -6,3 +6,6 @@ body { padding-top: 70px; }
 	display: none;
 	margin-top: 12px;
 }
+#my-profile-file-selector{
+	display: none;
+}
