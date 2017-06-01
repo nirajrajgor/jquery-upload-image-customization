@@ -1,7 +1,63 @@
-/* Page Styles */
-body { padding-top: 70px; }
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
+/* Page Styles */
+body { 
+	padding-top: 70px;
+	position: relative;
+	font-family: 'Lato', sans-serif;
+}
+.title{
+	font-size: 26px;
+	font-family: 'Lato', sans-serif;
+}
+.block-heading{
+	position: relative;
+}
+.block-heading h3{
+	text-transform: uppercase;
+	font-size: 16px;
+	color: #333;
+	letter-spacing: 1.5px;
+	font-family: 'Lato', sans-serif;
+}
+.block-heading::after{
+	content: '';
+	height: 1px;
+	position: absolute;
+	background-color: #9c27b0;
+	left: 0;
+	width: 30px;
+}
+.navbar-default{
+	background-color: #9c27b0;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #fff;
+}
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+    color: #fff;
+    background-color: #9c27b0;
+    border-color: #9c27b0;
+}
+.navbar-default .navbar-brand{
+	color: #fff;
+}
+#demo1-form{
+	margin-top: 40px;
+}
+.btn{
+	padding: 8px 34px;
+	background-color: #9c27b0;
+	color: #fff;
+	font-size: 16px;
+	border-radius: 0;
+}
+.btn:hover{
+	color: #fff !important;
+}
 /* end Page Style */
+
 #remove-profile-btn{ 
 	display: none;
 	margin-top: 12px;
