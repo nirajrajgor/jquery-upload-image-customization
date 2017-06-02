@@ -56,6 +56,26 @@ body {
 .btn:hover{
 	color: #fff !important;
 }
+.btn-absolute{
+	position: absolute;
+	right: 15px;
+    top: 20px;
+}
+.btn-outline{
+	padding: 2px 12px;
+	border: 1px solid #9c27b0;
+	color: #9c27b0;
+}
+.code-section{
+	background-color: #f7f7f9;
+	margin-top: 40px;
+}
+.css-section{
+	position: relative;
+	margin-top: 35px;
+}
+.css-copy{ top: 0 !important; right: 0 !important; }
+.css-code{ max-height: 200px; overflow-y: auto; }
 /* end Page Style */
 
 #remove-profile-btn{ 
