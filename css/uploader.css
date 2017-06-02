@@ -77,6 +77,7 @@ body {
 .css-copy{ top: 0 !important; right: 0 !important; }
 .css-code{ max-height: 200px; overflow-y: auto; }
 /* end Page Style */
+/** For Plugin Style **/
 
 #remove-profile-btn{ 
 	display: none;
