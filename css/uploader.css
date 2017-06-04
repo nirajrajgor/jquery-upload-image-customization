@@ -76,11 +76,9 @@ body {
 }
 .css-copy{ top: 0 !important; right: 0 !important; }
 .css-code{ max-height: 200px; overflow-y: auto; }
+.js-code{ max-height: 600px; overflow-y: auto; }
 /* end Page Style */
-<<<<<<< HEAD
 /** For Plugin Style **/
-=======
->>>>>>> 33080d8f2023bac58d5129f48dcaa509a01750bc
 
 #remove-profile-btn{ 
 	display: none;
