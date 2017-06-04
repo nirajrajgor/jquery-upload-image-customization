@@ -8,7 +8,6 @@ $(function(){
 	})
 	$('#remove-profile-btn').on('click', function(event) {
         event.preventDefault();
-        /* Act on the event */
         // make image view empty
         $('#upload-profile-image').attr('src', '');
         // make file name empty
