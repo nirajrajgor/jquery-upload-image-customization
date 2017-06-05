@@ -70,3 +70,34 @@ function checkProfileSize(arg){
         console.log('No file selected');
     }
 }
+
+// Copy to Clipboard
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
+function setTooltip(message) {
+  $('.html-copy').tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+}
+function hideTooltip() {
+  setTimeout(function() {
+    $('.html-copy').tooltip('hide');
+  }, 2000);
+}
+
+$(function(){
+    $('.html-copy').tooltip({
+      trigger: 'click',
+      placement: 'top'
+    });
+    $('.html-copy').on('click',function(){
+        copyToClipboard('#html-code');
+        setTooltip('Copied!');
+        hideTooltip();
+    });
+});
