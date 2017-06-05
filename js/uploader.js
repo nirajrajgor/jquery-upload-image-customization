@@ -27,7 +27,7 @@ function checkProfileSize(arg){
     var fileInput = $('form').find("input#my-profile-file-selector[type=file]")[0],
     file = fileInput.files && fileInput.files[0];
     var sizeKB = file.size / 1024;
-    var tmppath = URL.createObjectURL(event.target.files[0]);
+    var tmppath = URL.createObjectURL(fileInput.files[0]);
     var maxSize = arg.size || sizeKB;
     var imgHeight, imgWidth;
     console.log("maxSize "+maxSize);
