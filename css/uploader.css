@@ -65,6 +65,10 @@ body {
 	padding: 2px 12px;
 	border: 1px solid #9c27b0;
 	color: #9c27b0;
+	text-decoration: none !important;
+}
+.btn-outline:hover{
+	color: #9c27b0 !important;
 }
 .code-section{
 	background-color: #f7f7f9;
