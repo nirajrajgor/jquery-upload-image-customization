@@ -79,14 +79,14 @@ function copyToClipboard(element) {
   document.execCommand("copy");
   $temp.remove();
 }
-function setTooltip(message) {
-  $('.html-copy').tooltip('hide')
+function setTooltip(element,message) {
+  $(element).tooltip('hide')
     .attr('data-original-title', message)
     .tooltip('show');
 }
-function hideTooltip() {
+function hideTooltip(element) {
   setTimeout(function() {
-    $('.html-copy').tooltip('hide');
+    $(element).tooltip('hide');
   }, 2000);
 }
 
@@ -95,9 +95,27 @@ $(function(){
       trigger: 'click',
       placement: 'top'
     });
+    $('.css-copy').tooltip({
+      trigger: 'click',
+      placement: 'top'
+    });
+    $('.js-copy').tooltip({
+      trigger: 'click',
+      placement: 'top'
+    });
     $('.html-copy').on('click',function(){
         copyToClipboard('#html-code');
-        setTooltip('Copied!');
-        hideTooltip();
+        setTooltip($(this),'Copied!');
+        hideTooltip($(this));
+    });
+    $('.css-copy').on('click',function(){
+        copyToClipboard('#css-code');
+        setTooltip($(this),'Copied!');
+        hideTooltip($(this));
+    });
+    $('.js-copy').on('click',function(){
+        copyToClipboard('#js-code');
+        setTooltip($(this),'Copied!');
+        hideTooltip($(this));
     });
 });
