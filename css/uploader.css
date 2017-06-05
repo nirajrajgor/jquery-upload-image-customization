@@ -79,7 +79,7 @@ body {
 	margin-top: 35px;
 }
 .css-copy{ top: 0 !important; right: 0 !important; }
-.css-code{ max-height: 200px; overflow-y: auto; }
+.css-code{ max-height: 280px; overflow-y: auto; }
 .js-code{ max-height: 600px; overflow-y: auto; }
 /* end Page Style */
 /** For Plugin Style **/
