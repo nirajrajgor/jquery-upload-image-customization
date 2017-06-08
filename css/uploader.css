@@ -46,6 +46,9 @@ body {
 #demo1-form{
 	margin-top: 40px;
 }
+#demo2-form{
+	margin-top: 40px;
+}
 .btn{
 	padding: 8px 34px;
 	background-color: #9c27b0;
@@ -89,5 +92,13 @@ body {
 	margin-top: 12px;
 }
 #my-profile-file-selector{
+	display: none;
+}
+
+#remove-profile-btn-1{ 
+	display: none;
+	margin-top: 12px;
+}
+#my-profile-file-selector-1{
 	display: none;
 }
