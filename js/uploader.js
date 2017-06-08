@@ -1,10 +1,6 @@
 $(function(){
 	$('body').on("change", "#my-profile-file-selector", function(){
-		checkProfileSize({
-			// size: 200,
-			// width: 1280,
-			// height: null
-		});
+		checkProfileSize();
 	})
 	$('#remove-profile-btn').on('click', function(event) {
         event.preventDefault();
@@ -142,6 +138,78 @@ function checkProfileSize1(arg){
     }
 }
 
+$(function(){
+    $('body').on("change", "#my-profile-file-selector-2", function(){
+        checkProfileSize2({
+            width: 1280,
+            height: 720
+        });
+    })
+    $('#remove-profile-btn-2').on('click', function(event) {
+        event.preventDefault();
+        // make image view empty
+        $('#upload-profile-image-2').attr('src', '');
+        // make file name empty
+        $('#upload-profile-file-info-2').html('');
+        // make input file value empty
+        $('input#my-profile-file-selector-2[type=file]').val('')
+        // remove hide button
+        $('#remove-profile-btn-2').hide();
+        // show upload button again
+        $('label.profile-2').show();
+    });
+});
+function checkProfileSize2(arg){
+    $('#upload-profile-image-2').attr('src', '');
+    $('#upload-profile-file-info-2').html('');
+    $('#upload-profile-error-2').html('');
+    var fileInput = $('form').find("input#my-profile-file-selector-2[type=file]")[0],
+    file = fileInput.files && fileInput.files[0];
+    var sizeKB = file.size / 1024;
+    var tmppath = URL.createObjectURL(fileInput.files[0]);
+    var maxSize = arg.size || sizeKB;
+    var imgHeight, imgWidth;
+    console.log("maxSize "+maxSize);
+    if( file ) {
+        var img = new Image();
+        img.src = window.URL.createObjectURL( file );
+        img.onload = function() {
+            var width = img.naturalWidth, height = img.naturalHeight;
+            window.URL.revokeObjectURL( img.src );
+            imgWidth = arg.width || width;
+            console.log("imgWidth "+imgWidth);
+            imgHeight = arg.height || height;
+            if( sizeKB <= maxSize) {
+                if( width == imgWidth && height == imgHeight){
+                    var fileName = $('input#my-profile-file-selector-2[type=file]').val();
+                    fileName = fileName.substr(fileName.lastIndexOf("\\")+1);
+                    $('#upload-profile-image-2').attr('src', tmppath);
+                    $('#upload-profile-file-info-2').html(fileName);
+                    $('label.profile-2').hide();
+                    $('#remove-profile-btn-2').show();
+                }
+                else{
+                    imgWidth = arg.width || "any";
+                    imgHeight = arg.height || "any";
+                    $('#upload-profile-error-2')
+                        .html('Uploaded Picture Width should be '+
+                        imgWidth+' and Height should be '+imgHeight);
+                    var fileName = $('input#my-profile-file-selector-2[type=file]').val();
+                    console.log(fileName);
+                }
+            }
+            else {
+                $('#upload-profile-error-2').html('Uploaded Profile picture size should be less than '+maxSize+'KB');
+                var fileName = $('input#my-profile-file-selector-2[type=file]').val();
+                console.log(fileName);
+            }
+        };
+    }
+    else { //No file was input or browser doesn't support client side reading
+        console.log('No file selected');
+    }
+}
+
 
 // Copy to Clipboard
 function copyToClipboard(element) {
@@ -189,6 +257,19 @@ $(function(){
       placement: 'top'
     });
 
+    $('.html-copy-2').tooltip({
+      trigger: 'click',
+      placement: 'top'
+    });
+    $('.css-copy-2').tooltip({
+      trigger: 'click',
+      placement: 'top'
+    });
+    $('.js-copy-2').tooltip({
+      trigger: 'click',
+      placement: 'top'
+    });
+
     $('.html-copy').on('click',function(){
         copyToClipboard('#html-code');
         setTooltip($(this),'Copied!');
@@ -217,6 +298,22 @@ $(function(){
     });
     $('.js-copy-1').on('click',function(){
         copyToClipboard('#js-code-1');
+        setTooltip($(this),'Copied!');
+        hideTooltip($(this));
+    });
+
+    $('.html-copy-2').on('click',function(){
+        copyToClipboard('#html-code-2');
+        setTooltip($(this),'Copied!');
+        hideTooltip($(this));
+    });
+    $('.css-copy-2').on('click',function(){
+        copyToClipboard('#css-code-2');
+        setTooltip($(this),'Copied!');
+        hideTooltip($(this));
+    });
+    $('.js-copy-2').on('click',function(){
+        copyToClipboard('#js-code-2');
         setTooltip($(this),'Copied!');
         hideTooltip($(this));
     });
