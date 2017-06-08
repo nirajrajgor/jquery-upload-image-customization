@@ -3,9 +3,12 @@
 
 /* Page Styles */
 body { 
-	padding-top: 70px;
+	padding-top: 20px;
 	position: relative;
 	font-family: 'Lato', sans-serif;
+}
+#demo1, #demo2, #demo3{
+	padding-top: 40px;
 }
 .title{
 	font-size: 26px;
@@ -43,10 +46,7 @@ body {
 .navbar-default .navbar-brand{
 	color: #fff;
 }
-#demo1-form{
-	margin-top: 40px;
-}
-#demo2-form{
+#demo1-form, #demo2-form, #demo3-form{
 	margin-top: 40px;
 }
 .btn{
@@ -100,5 +100,13 @@ body {
 	margin-top: 12px;
 }
 #my-profile-file-selector-1{
+	display: none;
+}
+
+#remove-profile-btn-2{ 
+	display: none;
+	margin-top: 12px;
+}
+#my-profile-file-selector-2{
 	display: none;
 }
