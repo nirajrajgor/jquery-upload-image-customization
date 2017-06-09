@@ -7,8 +7,26 @@ body {
 	position: relative;
 	font-family: 'Lato', sans-serif;
 }
+footer{
+	padding: 10px 0;
+	background-color: #333;
+}
+footer h5{
+	color: rgba(255,255,255, 0.8);
+}
+.wrapper-2, .wrapper-4{
+	background-color: #f3f3f3;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
 #demo1, #demo2, #demo3{
 	padding-top: 40px;
+}
+.about{ margin-top: 60px; }
+.about-text{
+	font-size: 20px;
+    color: #555;
+    line-height: 1.6;
 }
 .title{
 	font-size: 26px;
@@ -37,6 +55,12 @@ body {
 }
 .navbar-default .navbar-nav>li>a{
 	color: #fff;
+}
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+	color: #fff;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color: #fff;	
 }
 .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
     color: #fff;
