@@ -17,6 +17,7 @@ $(function(){
     });
 });
 function checkProfileSize(arg){
+    arg = arg || {};
     $('#upload-profile-image').attr('src', '');
     $('#upload-profile-file-info').html('');
     $('#upload-profile-error').html('');
@@ -88,6 +89,7 @@ $(function(){
     });
 });
 function checkProfileSize1(arg){
+    arg = arg || {};
     $('#upload-profile-image-1').attr('src', '');
     $('#upload-profile-file-info-1').html('');
     $('#upload-profile-error-1').html('');
@@ -160,6 +162,7 @@ $(function(){
     });
 });
 function checkProfileSize2(arg){
+    arg = arg || {};
     $('#upload-profile-image-2').attr('src', '');
     $('#upload-profile-file-info-2').html('');
     $('#upload-profile-error-2').html('');
@@ -318,5 +321,22 @@ $(function(){
         hideTooltip($(this));
     });
 
+});
 
+// To smooth scroll hash
+$(function(){
+    $("nav ul li a[href^='#']").on('click', function(e) {
+       // prevent default anchor click behavior
+       e.preventDefault();
+       // store hash
+       var hash = this.hash;
+       // animate
+       $('html, body').animate({
+           scrollTop: $(hash).offset().top
+         }, 500, function(){
+           // when done, add hash to url
+           // (default click behaviour)
+           window.location.hash = hash;
+         });
+    });
 });
